@@ -28,7 +28,6 @@ const createPost = () => {
           userId: firebase.auth().currentUser.uid,
           addedAt: (new Date()).toLocaleString('pt-BR'),
           likes: 0,
-          comments: [],
           privacy: selectPrivacy,
           user: userSnap.data() || null,
         })
