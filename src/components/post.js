@@ -28,7 +28,7 @@ const Post = (props) => {
   </div>`;
   if (userId === props.post.userId) {
     template += `   
-     <div class="info-privacy">
+    <div class="info-privacy">
     ${Select({
     class: 'slc-privacy-post',
     dataId: `privacy-${props.id}`,
@@ -58,7 +58,7 @@ const Post = (props) => {
   if (userId === props.post.userId) {
     template += `  
     <div class="info-change">
-     ${Button({
+    ${Button({
     class: 'edit-post',
     dataId: props.id,
     title: 'Editar',

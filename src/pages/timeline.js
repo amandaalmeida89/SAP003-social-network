@@ -63,7 +63,6 @@ const liked = (event) => {
   firebase.firestore().collection('posts').doc(id).update({ likes: countLikes });
 };
 
-
 const timeline = (props) => {
   let layout = '';
   props.posts.forEach((snap) => {
@@ -108,7 +107,7 @@ const timeline = (props) => {
   <form>
     <div class="container-publish">
       <div class="textarea-publish">
-        ${Textarea({
+    ${Textarea({
     class: 'post-text',
     id: 'post-text',
     placeholder: 'digite aqui...',

@@ -11,7 +11,7 @@ body {
 
 .img-logo {
   display: block;
-  width: 80%;
+  width: 44%;
   margin-left: auto;
   margin-right: auto;
 }
@@ -91,8 +91,8 @@ body {
 }
 
 .img-profile {
-  margin-left: 24%;
-  width: 47%;
+  margin-left: 36%;
+  width: 30%;
 }
 
 .container-form-profile {
@@ -101,7 +101,6 @@ body {
   width: 69%;
   flex-direction: column;
   align-items: center;
-  margin-top: 11%;
   margin-left: 5%;
   border-radius: 4%;
   padding: 10%;
@@ -154,8 +153,9 @@ label[for="navigation"] {
 }
 
 .menu ul li {
-  width: 100%;
+  width: 112%;
   cursor: pointer;
+  height: 30px;
 }
 
 .menu li {
@@ -184,6 +184,7 @@ label[for="navigation"] {
   color: white;
   text-align: center;
   font-weight: bold;
+  text-shadow: 0 0 0.5em #000;
 }
 
 .users {
@@ -193,10 +194,10 @@ label[for="navigation"] {
 }
 
 .img-usuario {
-  margin-left: -8%;
-  margin-top: 8%;
-  margin-right: 12%;
-  width: 27%;
+  margin-left: 1%;
+  margin-top: 7%;
+  margin-right: 4%;
+  width: 30%;
   height: 5%;
 }
 
@@ -220,7 +221,9 @@ label[for="navigation"] {
 .post-text {
   margin-top: 8%;
   background: #FBFBFB;
- }
+  word-wrap: break-word;
+  word-break: break-all;
+}
 
 .images-publish {
   width: 100%;
@@ -357,6 +360,7 @@ justify-content: flex-end;
 
 .text-profile {
   text-align: center;
+  margin-top: 1%;
 }
 
 @media (min-width: 1280px) {
