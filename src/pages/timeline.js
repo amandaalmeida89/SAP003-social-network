@@ -79,7 +79,7 @@ const timeline = (props) => {
   });
 
   const templateTimeLine = `
-  <section class="section-menu">
+  <header class="header-menu">
     ${Input({
     class: 'navigation',
     id: 'navigation',
@@ -100,7 +100,7 @@ const timeline = (props) => {
   })}
       </ul>
     </nav>
-  </section>
+  </header>
   <h1 class="title-timeline">Low Carb Style</h1>  
   ${Bio(props.user || {})}
   <form>

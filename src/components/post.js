@@ -26,18 +26,7 @@ const Post = (props) => {
     text: props.post.text,
   })} 
   </div>`;
-  if (userId === props.post.userId) {
-    template += `   
-    <div class="info-privacy">
-    ${Select({
-    class: 'slc-privacy-post',
-    dataId: `privacy-${props.id}`,
-    selected: props.post.privacy,
-    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
-  })}
-    </div>
-    `;
-  }
+
   template += `<div class="info-post">
   <div class="info-like">
     ${ButtonImage({
@@ -58,6 +47,14 @@ const Post = (props) => {
   if (userId === props.post.userId) {
     template += `  
     <div class="info-change">
+    ${Select({
+    class: 'slc-privacy-post',
+    dataId: `privacy-${props.id}`,
+    selected: props.post.privacy,
+    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
+  })}
+    `;
+    template += `  
     ${Button({
     class: 'edit-post',
     dataId: props.id,
