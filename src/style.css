@@ -212,15 +212,18 @@ label[for="navigation"] {
 }
 
 .img-usuario {
-  margin-left: 1%;
   margin-top: 7%;
-  margin-right: 4%;
-  width: 200px;
-  height: 200px;
+  width: 180px;
+  height: 170px;
+  padding: 8px;
 }
 
 .bio {
   font-size: 19px;
+}
+
+.publication {
+  padding: 10px;
 }
 
 .container-publish {
@@ -436,10 +439,6 @@ justify-content: flex-end;
     align-items: center;
   }
 
-  .img-usuario {
-    height: 150px;
-  }
-  
   /* ----- timeline */
 
   label[for="navigation"] {
@@ -476,7 +475,9 @@ justify-content: flex-end;
     margin-left: 10%;
     margin-right: 2%;
     margin-top: 0.5%;
-    width: 10%;
+    width: 200px;
+    height: 200px;
+    padding: none;
   }
 
   .users {
@@ -488,8 +489,8 @@ justify-content: flex-end;
 
   .bio {
     font-size: 19px;
-  }  
-
+  } 
+  
   .container-publish {
     width: 45%;
     margin-top: -9.4%;
