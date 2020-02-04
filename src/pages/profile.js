@@ -69,7 +69,7 @@ const profile = (props) => {
     type: 'text',
     value: user.name || '',
     placeholder: 'Seu nome...',
-    maxlength: '15',
+    maxlength: '20',
   })}
     ${Input({
     class: 'inp-age-profile',

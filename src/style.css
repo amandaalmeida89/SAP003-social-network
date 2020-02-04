@@ -1,15 +1,17 @@
-*{
+* {
   font-family: 'Open Sans', sans-serif;
 }
+
 body {
   background: #F5F5F4;
   margin: 0;
 }
+
 .container-login {
   display: flex;
   flex-direction: column;
   margin-top: 8%;
-  }
+}
 
 .img-logo {
   display: block;
@@ -61,13 +63,14 @@ body {
   padding: 10px;
   margin-top: 20px;
   outline: none;
+  font-size: 14px;
 }
 
 .js-input-email, .js-input-password {
   width: 200px;
 }
 
-.primary-button,  .btn-profile, .btn-publicar, .slc-privacy {
+.primary-button, .btn-profile, .btn-publicar, .slc-privacy {
   color: white;
 }
 
@@ -84,7 +87,6 @@ body {
 
 .primary-button {
   width: 100px;
-
 }
 
 .btn-profile {
@@ -162,6 +164,8 @@ label[for="navigation"] {
   width: 112%;
   cursor: pointer;
   height: 30px;
+  border-radius: 6px;
+  border: 1px solid white;
 }
 
 .menu li {
@@ -174,7 +178,7 @@ label[for="navigation"] {
 .navigation {
   display: none;
 }
-  
+
 .img-timeline {
   display: block;
   width: 23%;
@@ -213,9 +217,10 @@ label[for="navigation"] {
 
 .img-usuario {
   margin-top: 7%;
-  width: 180px;
-  height: 170px;
+  width: 130px;
+  height: 130px;
   padding: 8px;
+  border-radius: 50%;
 }
 
 .bio {
@@ -224,6 +229,8 @@ label[for="navigation"] {
 
 .publication {
   padding: 10px;
+  font-size: 16px;
+
 }
 
 .container-publish {
@@ -250,12 +257,13 @@ textarea {
   background: #FBFBFB;
   word-wrap: break-word;
   word-break: break-all;
+  font-size: 14px;
 }
 
 .images-publish {
   width: 100%;
   margin-top: 1%;
-  padding: 8px; 
+  padding: 8px;
   display: flex;
   justify-content: flex-end;
 }
@@ -271,14 +279,19 @@ select {
 }
 
 .slc-privacy {
-  height: 79%;
+  font-size: 16px;
+  width: 96px;
+  height: 36px;
   background: #7BA651;
   border-radius: 4px;
 }
 
 .btn-publicar {
-  margin-left: 1%;
-  margin-right: 3%;
+  font-size: 16px;
+  width: 96px;
+  height: 36px;
+  margin-left: 3%;
+  margin-right: 8%;
   background: #7BA651;
   border-radius: 4px;
 }
@@ -294,7 +307,7 @@ select {
 }
 
 .name-user {
-  font-size: 14px;
+  font-size: 16px;
   margin-left: -3%;
 }
 
@@ -314,12 +327,12 @@ select {
 
 .publication-public {
   background: #ffffff;
-  width: 100%;  
+  width: 100%;
 }
 
 .info-privacy {
-display: flex;
-justify-content: flex-end;
+  display: flex;
+  justify-content: flex-end;
 }
 
 .slc-privacy-post {
@@ -387,6 +400,7 @@ justify-content: flex-end;
   border-radius: 9px;
   padding: 10px;
   margin-top: 29px;
+  font-size: 14px;
 }
 
 .text-profile {
@@ -396,81 +410,65 @@ justify-content: flex-end;
 }
 
 @media (min-width: 1279px) {
-/* ----- login */
-
+  /* ----- login */
   body {
     margin: 0;
     padding: 0;
   }
-
   .container-login {
     display: flex;
     flex-direction: row;
   }
-    
   .container-form-perfil {
     margin-top: 10%;
   }
-
   .img-logo {
     width: 65%;
     margin-top: 8%;
   }
-
   .text-welcome, .info-login, .text, .text-profile {
     color: black;
   }
-
   .text-title {
     font-weight: bold;
     font-size: 50px;
     line-height: 29px;
-  }  
-
-  .text-welcome { 
+  }
+  .text-welcome {
     margin-top: 2%;
     font-size: 20px;
     line-height: 38px;
-  }  
-
+  }
   .form {
     display: flex;
     flex-direction: column;
     align-items: center;
   }
-
   /* ----- timeline */
-
   label[for="navigation"] {
     display: none;
   }
-
   .menu {
     width: 18%;
     margin-left: -1%;
     transition: none;
   }
-
   .menu li {
     background-color: #7BA651;
   }
-
   .header-menu {
     height: 110px;
   }
-
   .title-timeline {
     margin-top: -6%;
     margin-left: auto;
     font-size: 43px;
   }
-
   .title-profile {
     margin-top: -2%;
     margin-left: auto;
     font-size: 43px;
   }
-
   .img-usuario {
     margin-left: 10%;
     margin-right: 2%;
@@ -479,32 +477,28 @@ justify-content: flex-end;
     height: 200px;
     padding: none;
   }
-
   .users {
     display: flex;
     justify-content: start;
     margin-top: 6%;
     margin-left: -5%;
   }
-
   .bio {
     font-size: 19px;
-  } 
-  
+  }
   .container-publish {
     width: 45%;
     margin-top: -9.4%;
     margin-left: 37%;
   }
-
   .textarea-publish {
     margin-top: -4%;
   }
-
   .post-text {
     width: 100%;
+    padding: 8px;
+    font-size: 18px;
   }
-
   .container-public {
     display: flex;
     flex-direction: column;
@@ -513,45 +507,40 @@ justify-content: flex-end;
     margin-top: 2%;
     border-radius: 4px;
   }
-
   .publication-public {
     height: auto;
   }
 
+  .btn-publicar {
+    margin-left: 1.5%;
+    margin-right: 3%;
+  }
   .slc-privacy-post {
     width: 40%;
   }
-
   .like-post {
     margin-right: 30%;
   }
-
   .likes {
     margin-left: 6%;
     margin-bottom: 2%;
-
   }
-
   .info-change {
     margin-left: 40%;
   }
-
   .img-timeline {
     display: block;
     width: 23%;
     margin-left: 6%;
     margin-top: -5%;
   }
-
   /* ----- profile */
-
   .text-profile {
     text-align: center;
     margin-top: -22%;
     font-size: 22px;
     font-weight: bold;
   }
-
   .container-form-profile {
     background-color: #9FBE80;
     display: flex;
@@ -563,11 +552,9 @@ justify-content: flex-end;
     border-radius: 4px;
     padding: 2%;
   }
-
   .section-menu {
     margin-top: 28%;
   }
-
   .inp-age-profile, .inp-name-profile, .inp-profession-profile, .inp-image-profile {
     background: #FFFFFF;
     box-shadow: inset 0px 4px 4px rgba(128, 73, 73, 0.25);

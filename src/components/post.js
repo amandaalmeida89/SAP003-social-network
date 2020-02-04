@@ -11,7 +11,7 @@ const Post = (props) => {
     ${Paragraph({
     class: 'name-user',
     dataId: props.id,
-    text: props.post.user ? `Publicado por ${props.post.user.name}` : 'Publicado por ...',
+    text: props.post.user ? `${props.post.user.name}` : '...',
   })}
     ${Paragraph({
     class: 'date-post',
