@@ -10,21 +10,32 @@ const signOut = () => firebase.auth().signOut();
 
 const updateProfile = () => {
   const nameUser = document.querySelector('.inp-name-profile').value;
-  const imageUser = document.querySelector('.inp-image-profile').value;
+  const imageUser = document.querySelector('.inp-image-profile').files[0];
   const ageUser = document.querySelector('.inp-age-profile').value;
   const professionUser = document.querySelector('.inp-profession-profile').value;
-  firebase.firestore().collection('users')
-    .doc(firebase.auth().currentUser.uid)
-    .set({
-      name: nameUser,
-      image: imageUser,
-      age: ageUser,
-      profession: professionUser,
+  const fileName = imageUser.name;
+  firebase.storage().ref().child(`/images_user/${fileName}`).put(imageUser)
+    .then(() => {
+      firebase.storage().ref().child(`/images_user/${fileName}`).getDownloadURL()
+        .then((url) => {
+          firebase.firestore().collection('users')
+            .doc(firebase.auth().currentUser.uid)
+            .set({
+              name: nameUser,
+              age: ageUser,
+              profession: professionUser,
+              image: url,
+            });
+        });
     })
     .then(() => {
       window.location = '#timeline';
+    })
+    .catch((err) => {
+      console.log(err);
     });
 };
+
 
 const profile = (props) => {
   const user = props.user || {};
@@ -59,7 +70,7 @@ const profile = (props) => {
     ${Input({
     class: 'inp-image-profile',
     id: 'inp-image-profile',
-    type: 'text',
+    type: 'file',
     value: user.image || '',
     placeholder: 'Link da sua imagem...',
   })}
