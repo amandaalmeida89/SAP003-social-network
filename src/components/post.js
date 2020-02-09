@@ -8,6 +8,7 @@ const Post = (props) => {
   let template = `
   <div class="container-public">
     <div class="data-date-public">
+    <img class="img-user" src="${props.post.user.image}">
     ${Paragraph({
     class: 'name-user',
     dataId: props.id,
