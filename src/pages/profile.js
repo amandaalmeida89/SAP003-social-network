@@ -13,27 +13,42 @@ const updateProfile = () => {
   const imageUser = document.querySelector('.inp-image-profile').files[0];
   const ageUser = document.querySelector('.inp-age-profile').value;
   const professionUser = document.querySelector('.inp-profession-profile').value;
-  const fileName = imageUser.name;
-  firebase.storage().ref().child(`/images_user/${fileName}`).put(imageUser)
-    .then(() => {
-      firebase.storage().ref().child(`/images_user/${fileName}`).getDownloadURL()
-        .then((url) => {
-          firebase.firestore().collection('users')
-            .doc(firebase.auth().currentUser.uid)
-            .set({
-              name: nameUser,
-              age: ageUser,
-              profession: professionUser,
-              image: url,
-            });
-        });
-    })
-    .then(() => {
-      window.location = '#timeline';
-    })
-    .catch((err) => {
-      console.log(err);
-    });
+  if (!imageUser) {
+    firebase.firestore().collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .update({
+        name: nameUser,
+        age: ageUser,
+        profession: professionUser,
+      })
+      .then(() => {
+        window.location = '#timeline';
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  } else {
+    firebase.storage().ref().child(`/images_user/${imageUser}`).put(imageUser)
+      .then(() => {
+        firebase.storage().ref().child(`/images_user/${imageUser}`).getDownloadURL()
+          .then((url) => {
+            firebase.firestore().collection('users')
+              .doc(firebase.auth().currentUser.uid)
+              .set({
+                name: nameUser,
+                age: ageUser,
+                profession: professionUser,
+                image: url,
+              });
+          });
+      })
+      .then(() => {
+        window.location = '#timeline';
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  }
 };
 
 

@@ -10,7 +10,7 @@ const locationHashChanged = () => {
       .get()
       .then((userSnap) => {
         const postsCollection = firebase.firestore().collection('posts');
-        postsCollection.orderBy('addedAt', 'desc')
+        postsCollection.orderBy('addedAt', 'asc')
           .onSnapshot((snap) => {
             document.querySelector('main').innerHTML = timeline({ posts: snap, user: userSnap.data() });
           });

@@ -26,7 +26,7 @@ const createPost = () => {
         firebase.firestore().collection('posts').add({
           text: textInput,
           userId: firebase.auth().currentUser.uid,
-          addedAt: (new Date()).toLocaleString('pt-BR'),
+          addedAt: new Date().toLocaleString('pt-BR'),
           likes: 0,
           privacy: selectPrivacy,
           user: userSnap.data() || null,
@@ -52,7 +52,7 @@ const updatePost = (event) => {
   const id = event.target.dataset.id;
   const editedPost = document.querySelector(`[data-id=text-${id}]`).textContent;
   const editedSelect = document.querySelector(`[data-id=privacy-${id}]`).value;
-  firebase.firestore().collection('posts').doc(id).update({ text: editedPost, privacy: editedSelect });
+  firebase.firestore().collection('posts').doc(id).update({ text: editedPost, privacy: editedSelect, addedAt: new Date().toLocaleString('pt-BR') });
 };
 
 
