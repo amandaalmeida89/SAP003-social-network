@@ -79,7 +79,7 @@ const profile = (props) => {
         <h1 class="title-profile">Low Carb Style</h1>
         </header>
         <section class="section-menu">
-    <p class="text-profile">Insira seus dados pessoais aqui...</p>
+    <p class="text-profile">Insira seus dados aqui...</p>
     <form> 
     <div class="container-form-profile">
     ${Input({

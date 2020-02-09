@@ -51,28 +51,28 @@ const Post = (props) => {
     class: 'slc-privacy-post',
     dataId: `privacy-${props.id}`,
     selected: props.post.privacy,
-    options: [{ value: '🔓', text: 'Público 🔓' }, { value: '🔐', text: 'Privado 🔐' }],
+    options: [{ value: '🔓', text: '🔓' }, { value: '🔐', text: '🔐' }],
   })}
     `;
     template += `  
     ${Button({
-    class: 'edit-post',
+    class: 'fas fa-edit edit-post',
     dataId: props.id,
-    title: 'Editar',
+    title: '',
     onClick: props.enableEvent,
   })}  
     `;
     template += Button({
-      class: 'save-post',
+      class: 'fas fa-save save-post',
       dataId: props.id,
-      title: 'Salvar',
+      title: '',
       onClick: props.updateEvent,
     });
 
     template += Button({
-      class: 'delete-post',
+      class: 'fas fa-trash-alt delete-post',
       dataId: props.id,
-      title: 'Deletar',
+      title: '',
       onClick: props.deleteEvent,
     });
   }

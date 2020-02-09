@@ -211,7 +211,6 @@ label[for="navigation"] {
 .users {
   display: flex;
   justify-content: center;
-  margin-top: 12%;
   align-items: center;
 }
 
@@ -229,8 +228,7 @@ label[for="navigation"] {
 
 .publication {
   padding: 10px;
-  font-size: 16px;
-
+  font-size: 18px;
 }
 
 .container-publish {
@@ -307,7 +305,7 @@ select {
 }
 
 .name-user {
-  font-size: 16px;
+  font-size: 20px;
   margin-left: -3%;
 }
 
@@ -321,7 +319,7 @@ select {
   justify-content: space-between;
   margin-right: 5%;
   margin-left: 5%;
-  font-size: 15px;
+  font-size: 18px;
   color: #FFFFFF;
 }
 
@@ -337,19 +335,22 @@ select {
 
 .slc-privacy-post {
   background: #9FBE80;
-  width: 34%;
   color: #FFFFFF;
   border: none;
-  font-size: 15px;
+  font-size: 30px;
+  margin-left: -25%;
+  outline: none;
 }
 
 .info-post {
   display: flex;
+  justify-content: space-between;
   padding: 4px;
 }
 
 .info-like {
   display: flex;
+  align-items: center;
   height: 38px;
   padding: 4px;
 }
@@ -362,36 +363,20 @@ select {
 .likes {
   color: white;
   font-weight: bold;
+  font-size: 18px;
 }
 
 .info-change {
   display: flex;
-  justify-content: flex-end;
-  margin-left: 10%;
 }
 
-.edit-post {
+.edit-post, .save-post, .delete-post {
   outline: none;
-  font-size: 15px;
+  font-size: 30px;
   color: #FFFFFF;
   background: #9FBE80;
   border: none;
-}
-
-.save-post {
-  outline: none;
-  font-size: 15px;
-  color: #FFFFFF;
-  background: #9FBE80;
-  border: none;
-}
-
-.delete-post {
-  outline: none;
-  font-size: 15px;
-  color: #FFFFFF;
-  background: #9FBE80;
-  border: none;
+  margin-right: 8%;
 }
 
 .inp-image-profile {
@@ -455,6 +440,8 @@ select {
   }
   .menu li {
     background-color: #7BA651;
+    font-size: 20px;
+    font-weight: bolder;
   }
   .header-menu {
     height: 110px;
@@ -481,10 +468,10 @@ select {
     display: flex;
     justify-content: start;
     margin-top: 6%;
-    margin-left: -5%;
+    margin-left: -10%;
   }
   .bio {
-    font-size: 19px;
+    font-size: 20px;
   }
   .container-publish {
     width: 45%;
@@ -510,24 +497,11 @@ select {
   .publication-public {
     height: auto;
   }
-
   .btn-publicar {
     margin-left: 1.5%;
     margin-right: 3%;
   }
-  .slc-privacy-post {
-    width: 40%;
-  }
-  .like-post {
-    margin-right: 30%;
-  }
-  .likes {
-    margin-left: 6%;
-    margin-bottom: 2%;
-  }
-  .info-change {
-    margin-left: 40%;
-  }
+ 
   .img-timeline {
     display: block;
     width: 23%;
@@ -562,5 +536,10 @@ select {
     padding: 10px;
     margin-top: 29px;
     width: 48%;
+    font-size: 18px;
+  }
+  .btn-profile {
+    width: 200px;
+    font-size: 22px;
   }
 }
