@@ -27,7 +27,7 @@ const createPost = () => {
           text: textInput,
           userId: firebase.auth().currentUser.uid,
           addedAt: new Date().toLocaleString('pt-BR'),
-          likes: 0,
+          likes: [],
           privacy: selectPrivacy,
           user: userSnap.data() || null,
         })
@@ -46,6 +46,7 @@ const deletePost = (event) => {
 const enableField = (event) => {
   const id = event.target.dataset.id;
   document.querySelector(`[data-id=text-${id}]`).contentEditable = 'true';
+  document.querySelector(`[data-id=text-${id}]`).className = 'publication publicationContentEditable';
 };
 
 const updatePost = (event) => {

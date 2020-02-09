@@ -231,6 +231,10 @@ label[for="navigation"] {
   font-size: 18px;
 }
 
+.publicationContentEditable {
+  border: 4px inset rgb(196, 192, 192);
+}
+
 .container-publish {
   display: flex;
   flex-direction: column;
@@ -501,7 +505,6 @@ select {
     margin-left: 1.5%;
     margin-right: 3%;
   }
- 
   .img-timeline {
     display: block;
     width: 23%;
