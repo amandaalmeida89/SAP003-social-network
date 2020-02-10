@@ -28,9 +28,9 @@ const updateProfile = () => {
         console.log(err);
       });
   } else {
-    firebase.storage().ref().child(`/images_user/${imageUser}`).put(imageUser)
+    firebase.storage().ref().child(`/images_user/${imageUser.name}`).put(imageUser)
       .then(() => {
-        firebase.storage().ref().child(`/images_user/${imageUser}`).getDownloadURL()
+        firebase.storage().ref().child(`/images_user/${imageUser.name}`).getDownloadURL()
           .then((url) => {
             firebase.firestore().collection('users')
               .doc(firebase.auth().currentUser.uid)
@@ -39,6 +39,25 @@ const updateProfile = () => {
                 age: ageUser,
                 profession: professionUser,
                 image: url,
+              })
+              .then(() => {
+                firebase.firestore().collection('users')
+                  .doc(firebase.auth().currentUser.uid)
+                  .get()
+                  .then((users) => {
+                    firebase.firestore().collection('posts')
+                      .where('userId', '==', firebase.auth().currentUser.uid)
+                      .get()
+                      .then((querySnapshot) => {
+                        querySnapshot.docs.forEach((doc) => {
+                          firebase.firestore().collection('posts')
+                            .doc(doc.id)
+                            .update({
+                              user: users.data(),
+                            });
+                        });
+                      });
+                  });
               });
           });
       })

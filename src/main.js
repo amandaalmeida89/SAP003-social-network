@@ -18,12 +18,11 @@ const locationHashChanged = () => {
   } else if (hash === '#login') {
     document.querySelector('main').innerHTML = login();
   } else if (hash === '#profile') {
-    const userCollection = firebase.firestore().collection('users');
-    userCollection
+    firebase.firestore().collection('users')
       .doc(firebase.auth().currentUser.uid)
       .get()
-      .then((snap) => {
-        document.querySelector('main').innerHTML = profile({ user: snap.data() });
+      .then((userSnap) => {
+        document.querySelector('main').innerHTML = profile({ user: userSnap.data() });
       });
   }
 };

@@ -8,7 +8,7 @@ const Post = (props) => {
   let template = `
   <div class="container-public">
     <div class="data-date-public">
-    <img class="img-user" src="${props.post.user.image}">
+    <img class="img-user" src="${props.post.user ? props.post.user.image : 'https://cdn1.iconfinder.com/data/icons/navigation-elements/512/user-login-man-human-body-mobile-person-512.png'}">
     ${Paragraph({
     class: 'name-user',
     dataId: props.id,
