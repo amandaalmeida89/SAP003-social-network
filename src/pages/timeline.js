@@ -15,9 +15,10 @@ const goProfile = () => {
 const createPost = () => {
   const textInput = document.querySelector('.post-text').value;
   const selectPrivacy = document.querySelector('.slc-privacy').value;
+  const imagePost = document.querySelector('.post-image').files[0];
   if (textInput === '') {
     alert('Campo Vazio! Digite sua mensagem');
-  } else {
+  } else if (!imagePost) {
     firebase.firestore()
       .collection('users')
       .doc(firebase.auth().currentUser.uid)
@@ -33,6 +34,31 @@ const createPost = () => {
         })
           .then(() => {
             textInput.value = '';
+          });
+      });
+  } else {
+    firebase.firestore()
+      .collection('users')
+      .doc(firebase.auth().currentUser.uid)
+      .get()
+      .then((userSnap) => {
+        firebase.storage().ref().child(`/images_post/${imagePost.name}`).put(imagePost)
+          .then(() => {
+            firebase.storage().ref().child(`/images_post/${imagePost.name}`).getDownloadURL()
+              .then((url) => {
+                firebase.firestore().collection('posts').add({
+                  text: textInput,
+                  userId: firebase.auth().currentUser.uid,
+                  addedAt: new Date().toLocaleString('pt-BR'),
+                  likes: [],
+                  privacy: selectPrivacy,
+                  user: userSnap.data() || null,
+                  imagePost: url,
+                })
+                  .then(() => {
+                    textInput.value = '';
+                  });
+              });
           });
       });
   }
@@ -114,6 +140,12 @@ const timeline = (props) => {
   })}
     </div>
     <div class="images-publish">
+    <label class="far fa-image label-image-post" for="post-image"></label>
+    ${Input({
+    class: 'far fa-image post-image',
+    id: 'post-image',
+    type: 'file',
+  })}
     ${Select({
     class: 'slc-privacy',
     selected: '🔓',

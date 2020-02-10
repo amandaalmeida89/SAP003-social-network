@@ -21,6 +21,7 @@ const Post = (props) => {
   })} 
     </div>
     <div class="publication-public">
+    <img class="publication image-publication" src="${props.post.imagePost ? props.post.imagePost : ''}">
     ${Paragraph({
     class: 'publication',
     dataId: `text-${props.id}`,

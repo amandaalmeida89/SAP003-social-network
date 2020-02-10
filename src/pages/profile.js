@@ -106,7 +106,6 @@ const profile = (props) => {
     id: 'inp-image-profile',
     type: 'file',
     value: user.image || '',
-    placeholder: 'Link da sua imagem...',
   })}
     ${Input({
     class: 'inp-name-profile',
