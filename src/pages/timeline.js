@@ -85,8 +85,19 @@ const updatePost = (event) => {
 
 const liked = (event) => {
   const id = event.target.dataset.id;
-  const countLikes = Number(document.querySelector(`[data-id=numbers-${id}]`).textContent) + 1;
-  firebase.firestore().collection('posts').doc(id).update({ likes: countLikes });
+  firebase.firestore().collection('posts')
+    .doc(id)
+    .get()
+    .then((snap) => {
+      const post = snap.data();
+      const index = post.likes.indexOf(firebase.auth().currentUser.uid);
+      if (index >= 0) {
+        post.likes.splice(index, 1);
+      } else {
+        post.likes.push(firebase.auth().currentUser.uid);
+      }
+      firebase.firestore().collection('posts').doc(id).update({ likes: post.likes });
+    });
 };
 
 const timeline = (props) => {

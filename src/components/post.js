@@ -41,7 +41,7 @@ const Post = (props) => {
     ${Paragraph({
     class: 'likes',
     dataId: `numbers-${props.id}`,
-    text: props.post.likes || '',
+    text: props.post.likes.length || '',
   })} 
   </div>
   `;
